@@ -30,5 +30,5 @@ public class Main {
         System.out.println("order1.equals(order4): " + order1.equals(order4));
     }
 }
-
+// Доработка ДЗ
 

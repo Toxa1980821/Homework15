@@ -47,3 +47,4 @@ public class Order {
         return Objects.hash(customer, Arrays.hashCode(basket));
     }
 }
+//Доработка ДЗ
