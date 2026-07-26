@@ -1,7 +1,6 @@
 import java.util.Objects;
 
 public class Product {
-
     private int id;
     private String name;
     private int price;
@@ -16,29 +15,23 @@ public class Product {
 
     @Override
     public String toString() {
-        String info = "Товар[артикул=";
-        info += id;
-        info += ", название=";
-        info += name;
-        info += ", цена=";
-        info += price;
-        info += ", категория=";
-        info += category;
-        info += "]";
-        return info;
+        return "Товар[артикул=" + id + ", название=" + name + ", цена=" + price + ", категория=" + category + "]";
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
         Product other = (Product) obj;
-        return this.id == other.id && Objects.equals(this.category, other.category);
+
+
+        if (this.id != other.id) return false;
+        return Objects.equals(this.category, other.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, category);
     }
 }
-
-
